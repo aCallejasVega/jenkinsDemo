@@ -246,6 +246,7 @@ public class ClienteController {
 		return new ResponseEntity<Resource>(recurso, cabecera, HttpStatus.OK);
 
 	}
+	
 
 	@GetMapping("/regiones")
 	@Secured({"ROLE_ADMIN","ROLE_USER"})
@@ -256,6 +257,10 @@ public class ClienteController {
 		} else {
 			return new ResponseEntity<List<Region>>(regiones, HttpStatus.OK);
 		}
+	}
+	
+	public String saludo() {
+		return "hola mundo";
 	}
 
 }
